@@ -14,7 +14,7 @@ const CheckBoxInfo = ({ inputName, children }: CheckBoxInfoProps) => {
         id={inputName}
         name={inputName}
       />
-      <label htmlFor={inputName}>{children}</label>
+      <label htmlFor={inputName} className="text-sm">{children}</label>
     </div>
   );
 };
