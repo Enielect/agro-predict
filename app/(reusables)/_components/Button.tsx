@@ -2,18 +2,22 @@ import { cn } from "@/lib/utils";
 import React from "react";
 
 type ButtonProp = {
-  className: string;
+  className?: string;
   children: React.ReactNode;
-  type: "active" | "guest";
+  style: "active" | "guest";
+  type?: "submit";
+  onClick?: () => void;
 };
 
-const Button = ({ className, type, children }: ButtonProp) => {
+const Button = ({ className, type, style, children, onClick }: ButtonProp) => {
   return (
     <button
+      onClick={onClick}
+      type={type}
       className={cn(
         "w-full py-3 rounded-lg",
         `${
-          type === "active"
+          style === "active"
             ? "bg-[#389738] text-white text-[14px]"
             : "bg-[#D3E8D3] text-[#389738] text-[14px]"
         }`,
