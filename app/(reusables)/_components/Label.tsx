@@ -20,7 +20,7 @@ const Label = ({ type }: LabelProps) => {
         <span className="px-3">
           <Link
             className="text-[#389738] text-[14px] font-semibold"
-            href={type === "login" ? "/login" : "signup"}
+            href={type === "login" ? "/signup" : "login"}
           >
             {type === "login" ? "Sign up" : "Log In"}
           </Link>
