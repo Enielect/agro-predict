@@ -1,5 +1,5 @@
 import React from "react";
-import RecoverAccountPage from "@/app/(reusables)/_components/RecoverAccount.Page";
+import RecoverAccountPage from "@/app/(auth)/_components/RecoverAccount.Page";
 
 const RecoveryPage = () => {
   return (

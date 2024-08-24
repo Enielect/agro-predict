@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import Input from "@/app/(reusables)/_components/Input";
-import Label from "@/app/(reusables)/_components/Label";
-import CheckBoxInfo from "@/app/(reusables)/_components/CheckBoxInfo";
-import Button from "@/app/(reusables)/_components/Button";
+import Input from "@/app/(auth)/_components/Input";
+import Label from "@/app/(auth)/_components/Label";
+import CheckBoxInfo from "@/app/(auth)/_components/CheckBoxInfo";
+import Button from "@/app/(auth)/_components/Button";
 import { useFormState, useFormStatus } from "react-dom";
 import { loginAction } from "@/app/actions/auth";
 
