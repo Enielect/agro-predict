@@ -3,7 +3,7 @@ import React from "react";
 
 const ProfilePage = () => {
   return (
-    <div className="mx-5 py-7">
+    <div className="mx-5 py-3">
       <Profile />
     </div>
   );
