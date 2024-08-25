@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import TopNav from "@/components/TopNav";
 import { cn } from "@/lib/utils";
+import BottomNav from "@/components/BottomNav";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -19,10 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable
-        )}
+        className={cn("min-h-screen  font-sans antialiased", inter.variable)}
       >
         <TopNav />
         <div className="pt-11">{children}</div>
