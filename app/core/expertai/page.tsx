@@ -1,7 +1,7 @@
 import React from "react";
 
 const ExpertAiPage = () => {
-  return <main className="min-h-screen w-full">waiting for Bukunmi 😴</main>;
+  return <main className="min-h-screen w-full mt-[40px] mx-4">waiting for Bukunmi 😴</main>;
 };
 
 export default ExpertAiPage;
