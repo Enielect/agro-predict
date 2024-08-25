@@ -15,7 +15,7 @@ const Button = ({ className, type, style, children, onClick }: ButtonProp) => {
       onClick={onClick}
       type={type}
       className={cn(
-        "w-full py-3 rounded-lg",
+        "w-full py-3 rounded-full",
         `${
           style === "active"
             ? "bg-[#389738] text-white text-[14px]"
