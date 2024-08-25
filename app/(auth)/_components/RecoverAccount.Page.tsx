@@ -1,10 +1,12 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import Label from "./Label";
 import Input from "./Input";
 import Button from "./Button";
 import Link from "next/link";
+import { MailIcon, PhoneIcon } from "@/components/Profile.Page";
+import { EyeIcon } from "lucide-react";
 
 const RecoverAccountPage = () => {
   const [showing, setIsShowing] = useState("email");
@@ -18,6 +20,7 @@ const RecoverAccountPage = () => {
             description="A new password will be sent to the email you provided"
           />
           <Input
+            icon={<MailIcon />}
             inputName="email"
             label="Email Address"
             placeholder="Enter your email address"
@@ -47,6 +50,7 @@ const RecoverAccountPage = () => {
             description="A new password will be sent to the number you provided"
           />
           <Input
+            icon={<PhoneIcon />}
             inputName="phone-number"
             label="Phone Number"
             placeholder="Enter your phone number"
@@ -75,18 +79,21 @@ const RecoverAccountPage = () => {
             description="Enter the default password that was sent to you"
           />
           <Input
+            icon={<EyeIcon />}
             inputName={"default-password"}
             label={"Default Password"}
             placeholder={""}
             error={undefined}
           />
           <Input
+            icon={<EyeIcon />}
             inputName={"new-password"}
             label={""}
             placeholder={"Enter New Password"}
             error={undefined}
           />
           <Input
+            icon={<EyeIcon />}
             inputName={"confirm-new-password"}
             label={""}
             placeholder={"Confirm New Password"}

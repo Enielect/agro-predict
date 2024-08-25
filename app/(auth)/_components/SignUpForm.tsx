@@ -8,6 +8,7 @@ import Button from "./Button";
 import { useFormState, useFormStatus } from "react-dom";
 import { signUpAction } from "@/app/actions/auth";
 import Link from "next/link";
+import { EyeIcon, Mail } from "lucide-react";
 
 const SignUpForm = () => {
   const [state, action] = useFormState(signUpAction, undefined);
@@ -17,6 +18,7 @@ const SignUpForm = () => {
       <Label type="signup" />
       <div className="py-5 space-y-5">
         <Input
+          icon={<Mail />}
           inputName="first-name"
           label="First Name"
           placeholder="Enter your first name"
@@ -26,6 +28,7 @@ const SignUpForm = () => {
           <p className="text-red-500 text-sm">{state.errors.first_name}</p>
         )}
         <Input
+          icon={<Mail />}
           inputName="last-name"
           label="Last Name"
           placeholder="Enter your last name"
@@ -35,6 +38,7 @@ const SignUpForm = () => {
           <p className="text-red-500 text-sm">{state.errors.last_name}</p>
         )}
         <Input
+          icon={<Mail />}
           inputName="email"
           label="Email Address"
           placeholder="Enter your email address"
@@ -44,6 +48,7 @@ const SignUpForm = () => {
           <p className="text-red-500 text-sm">{state.errors.email}</p>
         )}
         <Input
+          icon={<EyeIcon />}
           inputName="password"
           label="Passoword"
           placeholder="Enter your password"

@@ -6,7 +6,7 @@ import Button from "@/app/(auth)/_components/Button";
 
 import dummyProfile from "@/public/dummy-profile.png";
 
-const UserIcon = () => {
+export const UserIcon = () => {
   return (
     <svg
       width="20"
@@ -26,7 +26,7 @@ const UserIcon = () => {
   );
 };
 
-const PhoneIcon = () => {
+export const PhoneIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ const PhoneIcon = () => {
   );
 };
 
-const MailIcon = () => {
+export const MailIcon = () => {
   return (
     <svg
       width="20"

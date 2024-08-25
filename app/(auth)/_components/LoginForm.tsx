@@ -7,6 +7,8 @@ import CheckBoxInfo from "@/app/(auth)/_components/CheckBoxInfo";
 import Button from "@/app/(auth)/_components/Button";
 import { useFormState, useFormStatus } from "react-dom";
 import { loginAction } from "@/app/actions/auth";
+import { MailIcon } from "@/components/Profile.Page";
+import { EyeIcon } from "lucide-react";
 
 const LoginForm = () => {
   const [state, action] = useFormState(loginAction, undefined);
@@ -17,6 +19,7 @@ const LoginForm = () => {
       <Label type="login" />
       <div className="py-5 space-y-5">
         <Input
+        icon={<MailIcon />}
           inputName="email"
           label="Email Address"
           placeholder="Enter your email address"
@@ -27,6 +30,7 @@ const LoginForm = () => {
           <p className="text-red-500 text-sm">{state.errors.email}</p>
         )}
         <Input
+        icon={<EyeIcon />}
           inputName="password"
           label="Password"
           placeholder="Enter your password"
