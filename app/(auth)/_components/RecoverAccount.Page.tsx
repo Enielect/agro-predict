@@ -82,20 +82,20 @@ const RecoverAccountPage = () => {
             icon={<EyeIcon />}
             inputName={"default-password"}
             label={"Default Password"}
-            placeholder={""}
+            placeholder="Default Password"
             error={undefined}
           />
           <Input
             icon={<EyeIcon />}
             inputName={"new-password"}
-            label={""}
+            label="New Password"
             placeholder={"Enter New Password"}
             error={undefined}
           />
           <Input
             icon={<EyeIcon />}
             inputName={"confirm-new-password"}
-            label={""}
+            label="Confirm New Password"
             placeholder={"Confirm New Password"}
             error={undefined}
           />
