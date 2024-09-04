@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn("min-h-screen  font-sans antialiased", inter.variable)}
+        className={cn("min-h-[100dvh]  font-sans antialiased", inter.variable)}
       >
         <TopNav />
         <div className="pt-11">{children}</div>

@@ -6,8 +6,8 @@ export default function CoreLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
-      {children}
+    <div className="min-h-[100dvh]">
+      <div className="overflow-scroll h-[calc(100dvh-69px)]">{children}</div>
       <BottomNav />
     </div>
   );
