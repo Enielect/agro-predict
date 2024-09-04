@@ -1,10 +1,13 @@
-import React from "react";
+'use client'
+
+import React, { useState } from "react";
 import { Header, ProfileIcon } from "./Settings.Page";
 import Image from "next/image";
 import Input from "@/app/(auth)/_components/Input";
 import Button from "@/app/(auth)/_components/Button";
 
 import dummyProfile from "@/public/dummy-profile.png";
+import Modal from "./Modal";
 
 export const UserIcon = () => {
   return (
@@ -72,6 +75,7 @@ function ImageBlock() {
 }
 
 const Profile = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="space-y-5">
       <Header name="Profile" icon={<UserIcon />} />
@@ -100,7 +104,21 @@ const Profile = () => {
         />
       </div>
       <div className="space-y-4">
-        <Button style="active">Update your plan</Button>
+        <Button style="active" onClick={() => setIsOpen(true)}>Update your plan</Button>
+        <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+          <div className="rounded-xl bg-white w-fit mx-[10%] px-4 py-3">
+            <header className="font-semibold py-1  ">
+              Changes Saved
+            </header>
+            <p className="py-4 text-[#444444] text-[14px]">
+              You have successully updated your profile. It will reflect in a
+              bit
+            </p>
+            <button className="px-3 py-2  w-1/4 rounded-full text-white  bg-[#389738] capitalize">
+              done
+            </button>
+          </div>
+        </Modal>
         <Button type="submit" style="guest">
           Edit your profile
         </Button>
