@@ -120,7 +120,7 @@ const bottomNav = [
 
 const BottomNav = () => {
   return (
-    <nav className="px-6 fixed bottom-0 right-0 left-0 py-2">
+    <nav className="px-6 z-10 bg-white fixed bottom-0 right-0 left-0 py-2">
       <ul className="flex justify-between">
         {bottomNav.map((item) => (
           <NavLink key={item.name} item={item} />
