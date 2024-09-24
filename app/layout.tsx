@@ -21,8 +21,7 @@ export default function RootLayout({
       <body
         className={cn("min-h-[100dvh]  font-sans antialiased", inter.variable)}
       >
-        <TopNav />
-        <div className="pt-11">{children}</div>
+        <div>{children}</div>
       </body>
     </html>
   );
