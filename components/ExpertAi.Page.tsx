@@ -2,7 +2,7 @@ import React from "react";
 import { CameraIcon, MessageIcon } from "./svgIcons";
 import { ChevronRight } from "lucide-react";
 import { ReceiverChat, SenderChat } from "./QuickScan.Page";
-import { ExpertAiHeader } from "@/app/(core)/expertai/components/ExpertAiReusables";
+import { ExpertAiHeader } from "@/app/(core)/(AI)/expertai/components/ExpertAiReusables";
 
 const ExpertAi = () => {
   return (
