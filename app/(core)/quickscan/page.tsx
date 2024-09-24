@@ -5,9 +5,9 @@ import ImagePreview from "./components/ImagePreview";
 
 const QuickScanPage = () => {
   return (
-    <div className="mx-6 min-h-[100dvh] py-[35px]">
-      {/* <QuickScan /> */}
-      <ImageDescription />
+    <div className=" sm:bg-[#A2FFA2]/10 min-h-[100dvh] ">
+      <QuickScan />
+      {/* <ImageDescription /> */}
       {/* <ImagePreview /> */}
     </div>
   );

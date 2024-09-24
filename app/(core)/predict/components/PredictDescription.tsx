@@ -22,14 +22,16 @@ const Refresh = () => {
   );
 };
 
+//770-950
+
 const PredictDescription = () => {
   return (
-    <div className="">
+    <div className="sm:flex sm:flex-col min-[950px]:flex-row sm:justify-between sm:gap-6">
       <div>
         {/* <Image src="" alt="image" /> */}
-        <div className="w-full h-[300px] bg-gray-300"></div>
+        <div className="w-full sm:w-[20rem] h-[320px] sm:min-h-[18rem] bg-gray-300"></div>
       </div>
-      <div className="mt-[15px]">
+      <div className="mt-[15px] sm:mt-0 sm:w-full">
         <div className="space-y-3">
           <Description
             left={<span className="font-bold">Maize</span>}
@@ -55,14 +57,17 @@ const PredictDescription = () => {
             right={<a className="">Rainy</a>}
           />
         </div>
-        <div className="py-4 space-y-3">
+        <div className="py-4 sm:py-0 space-y-3 sm:space-y-2">
           <div className="text-sm text-[#444444]">
             Based on the following parameters
           </div>
           <Description
             left={<span className="font-semibold">Sustainability score</span>}
-            right={<span className="font-bold text-[#389738] text-2xl">93%</span>}
+            right={
+              <span className="font-bold text-[#389738] text-2xl">93%</span>
+            }
           />
+          <button className="w-full py-3 px-2 rounded-full text-white bg-[#389738]">Download Result</button>
         </div>
       </div>
     </div>
@@ -76,7 +81,7 @@ type DescriptionProp = {
 
 function Description({ left, right }: DescriptionProp) {
   return (
-    <div className="flex justify-between items-center py-2">
+    <div className="flex justify-between items-center sm:py-0 py-2">
       {left}
       {right}
     </div>

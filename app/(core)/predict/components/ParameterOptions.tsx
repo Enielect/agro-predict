@@ -2,7 +2,11 @@
 
 import React, { useState } from "react";
 
-const ParameterOptions = () => {
+type OptionsProp = {
+  setActive: (value: "upload" | "parameter" | "dataOptions" | "description") => void;
+}
+
+const ParameterOptions = ({setActive}: OptionsProp) => {
   return (
     <div>
       <h2 className="text-3xl font-semibold py-3">Predict</h2>
@@ -16,7 +20,7 @@ const ParameterOptions = () => {
             <SelectOption key={i} description="placeholder text" />
           ))}
       </div>
-      <button className="bg-[#389738] w-full rounded-full text-center py-3 text-white">Proceed (4 Selected)</button>
+      <button onClick={() => setActive('dataOptions')} className="bg-[#389738] w-full rounded-full text-center py-3 text-white">Proceed (4 Selected)</button>
     </div>
   );
 };

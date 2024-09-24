@@ -2,7 +2,13 @@ import React from "react";
 import PredictInput from "./PredictInput";
 import Button from "@/app/(auth)/_components/Button";
 
-const DataOptions = () => {
+type OptionsProp = {
+  setActive: (
+    value: "upload" | "parameter" | "dataOptions" | "description"
+  ) => void;
+};
+
+const DataOptions = ({ setActive }: OptionsProp) => {
   return (
     <div>
       <h2 className="font-semibold text-3xl py-4">Predict</h2>
@@ -38,7 +44,7 @@ const DataOptions = () => {
         />
       </div>
       <div className="space-y-4">
-        <Button style="active" type="submit">
+        <Button onClick={() => setActive('description')} style="active" type="submit">
           Predict
         </Button>
         <Button style="guest">Edit Parameters</Button>
