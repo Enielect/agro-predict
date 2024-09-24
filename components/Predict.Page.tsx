@@ -1,44 +1,82 @@
-import ImageUpload from "@/app/core/components/ImageUpload";
-import React from "react";
+"use client";
 
-const PredictIcon = () => {
-  return (
-    <svg
-      width="80"
-      height="80"
-      viewBox="0 0 80 80"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle
-        cx="40"
-        cy="40"
-        r="39.5"
-        fill="#FEFEFE"
-        fill-opacity="0.6"
-        stroke="#389738"
-      />
-      <path
-        d="M44 36V44M40 39V44M36 42V44M34 48H46C46.5304 48 47.0391 47.7893 47.4142 47.4142C47.7893 47.0391 48 46.5304 48 46V34C48 33.4696 47.7893 32.9609 47.4142 32.5858C47.0391 32.2107 46.5304 32 46 32H34C33.4696 32 32.9609 32.2107 32.5858 32.5858C32.2107 32.9609 32 33.4696 32 34V46C32 46.5304 32.2107 47.0391 32.5858 47.4142C32.9609 47.7893 33.4696 48 34 48Z"
-        stroke="#389738"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-  );
-};
+import ImageUpload from "@/app/(core)/components/ImageUpload";
+import React, { useState } from "react";
+import { ChevronRightIcon, CircularPredictIcon, PredictIcon } from "./svgIcons";
+import ParameterOptions from "@/app/(core)/predict/components/ParameterOptions";
+import DataOptions from "@/app/(core)/predict/components/DataOptions";
+import PredictDescription from "@/app/(core)/predict/components/PredictDescription";
+import { SettingsOptions } from "./Settings.Page";
+import { AnalyticsSummary } from "./Dashboard.Page";
 
 const Predict = () => {
+  const [active, setActive] = useState<
+    "upload" | "parameter" | "dataOptions" | "description"
+  >("upload");
   return (
-    <div>
-      <ImageUpload
-        description="Tap the icon to predict"
-        icon={<PredictIcon />}
-      />
+    <form>
+      <div className="sm:grid grid-cols-[18rem_1fr] gap-3 pt-2 h-full ">
+        <div className="bg-white p-3 rounded-md">
+          {active === "upload" && (
+            <div>
+              <h2 className="py-3">Predict</h2>
+              <ImageUpload
+                type="predict"
+                setActive={setActive}
+                description="Tap the icon to predict"
+                icon={<CircularPredictIcon />}
+              />
 
-      <h3 className="py-4 font-semibold text-lg">Previous Predictions</h3>
-    </div>
+              <h3 className="py-4 pl-3 font-semibold text-sm sm:text-base">
+                Previous Predictions
+              </h3>
+              <div className="w-full">
+                {SettingsOptions.map((option) => (
+                  <div key={option.id}>
+                    <div className="py-5 px-4">
+                      {option.options.map((item) => (
+                        <div
+                          key={item.link}
+                          className="flex py-5 items-center justify-between"
+                        >
+                          <div className="flex items-center space-x-4">
+                            {item.icon}
+                            <span>{item.name}</span>
+                          </div>
+                          <ChevronRightIcon />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {active === "parameter" && <ParameterOptions setActive={setActive} />}
+          {/* note we are only simulating  transition between pages*/}
+          <div className="sm:hidden">
+            {active === "dataOptions" && <DataOptions setActive={setActive} />}
+          </div>
+          <div className="sm:hidden">
+            {active === "description" && <PredictDescription />}
+          </div>
+        </div>
+        <div className="hidden sm:block p-3 bg-white">
+          <div>
+            {active === "dataOptions" && <DataOptions setActive={setActive} />}
+          </div>
+          <div>
+            {active === "description" && (
+              <div className="space-y-2">
+                <PredictDescription />
+                <AnalyticsSummary />
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </form>
   );
 };
 

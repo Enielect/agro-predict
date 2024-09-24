@@ -4,7 +4,7 @@ import { BellIcon, Header } from "./Settings.Page";
 import { notificationData, notificationDataType } from "@/lib/dummydata";
 import { cn } from "@/lib/utils";
 
-const UnreadBellIcon = () => {
+export const UnreadBellIcon = () => {
   return (
     <svg
       width="24"
