@@ -12,7 +12,6 @@ import { EyeIcon, Mail } from "lucide-react";
 
 const SignUpForm = () => {
   const [state, action] = useFormState(signUpAction, undefined);
-  const { pending } = useFormStatus();
   return (
     <form className="py-7" action={action}>
       <Label type="signup" />
@@ -72,9 +71,7 @@ const SignUpForm = () => {
         </CheckBoxInfo>
       </div>
       <div className="py-3 space-y-3">
-        <Button type="submit" style="active" className={""}>
-          {pending ? "Loading..." : "Create Account"}
-        </Button>
+        <LoginButton />
         <Button style="guest" className={""}>
           Continue as Guest
         </Button>
@@ -82,5 +79,15 @@ const SignUpForm = () => {
     </form>
   );
 };
+
+function LoginButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <Button type="submit" style="active" className={""}>
+      {pending ? "Loading..." : "Create Account"}
+    </Button>
+  );
+}
 
 export default SignUpForm;

@@ -12,7 +12,7 @@ import { EyeIcon } from "lucide-react";
 
 const LoginForm = () => {
   const [state, action] = useFormState(loginAction, undefined);
-  console.log(state);
+  // console.log(state);
   const { pending } = useFormStatus();
   return (
     <form className="py-7" action={action}>

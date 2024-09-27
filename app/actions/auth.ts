@@ -23,9 +23,12 @@ export async function loginAction(prev: any, formData: FormData) {
     validatedFields.data
   );
 
+  if(error) console.log('error from supabase', error);
+
   if (error) {
     // redirect("/error");
     console.log("there was an issue logging in user");
+    console.error("errror", error);
   }
 
   revalidatePath("/", "layout");
@@ -61,13 +64,15 @@ export async function signUpAction(prev: any, formData: FormData) {
   }); //You can assign metadata to users on sign up:
 
   //retrieving meta_data:
-  // const {
-  //   data: { user },
-  // } = await supabase.auth.getUser()
-  // let metadata = user.user_metadata
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  let metadata = user?.user_metadata;
 
+  console.log("user", metadata);
   if (error) {
     console.error("There was an issue signing user up");
+    console.error(error)
   }
 
   revalidatePath("/", "layout");
