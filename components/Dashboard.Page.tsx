@@ -1,4 +1,6 @@
 import React from "react";
+import DisplayBarChart from "./DisplayBarChart";
+import DisplayPieChart from "./DisplayPieChart";
 
 const Dashboard = () => {
   return (
@@ -18,8 +20,8 @@ const Dashboard = () => {
         {/* card wrapper */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mt-3">
           <Card header="Weather Updates" value="76" color="bg-[#A2FFA2]/60" />
-          <Card header="Weather Updates" value="76" color="bg-[#A2FFA2]/60" />
-          <Card header="Weather Updates" value="76" color="bg-[#A2FFA2]/60" />
+          <Card header="Weather Updates" value="76" color="bg-[#FFFDD0]/60" />
+          <Card header="Weather Updates" value="76" color="bg-[#F5F5DC]/60" />
         </div>
         <div className="sm:flex gap-3">
           <div className="sm:flex-1 space-y-2">
@@ -57,7 +59,8 @@ function AnalyticsTable() {
         </li>
       </ul>
       {/* analytics table */}
-      <div className="h-[20rem] w-full bg-gray-300"></div>
+
+      <DisplayBarChart />
       {/* update at time */}
       <div className="py-3">
         <span>
@@ -71,10 +74,11 @@ function AnalyticsTable() {
 
 function PreviousPredictionCard() {
   return (
-    <div className="p-3 md:flex md:flex-row-reverse rounded-md bg-[#A2FFA2]/20">
-      <div className="h-[17rem] w-full my-3 sm:my-0 bg-gray-300"></div>
+    <div className="p-3 md:flex md:flex-row-reverse md:justify-end md:gap-[4rem] rounded-md bg-[#A2FFA2]/20">
+      {/* <div className="h-[17rem] w-full my-3 sm:my-0 bg-gray-300"></div> */}
+      <DisplayPieChart />
       {/* list of crops based on viability */}
-      <ul className="text-[#444444] spce-y-4">
+      <ul className="text-[#444444]  md:flex md:flex-col md:justify-between spce-y-4">
         <li>
           <Dot color="#A2FFA2" /> Maize (56%){" "}
           <span className="text-[389738]">Recommended</span>
@@ -129,7 +133,7 @@ type CardProp = { header: string; value: string; color: string };
 
 function Card({ header, value, color }: CardProp) {
   return (
-    <div className={`${color}  p-3 rounded-md`}>
+    <div className={`${color}  py-4 px-5 rounded-3xl`}>
       <header className="text-[#1e1e1e]/60">{header}</header>
       <strong className="text-4xl block py-4 md:text-5xl">
         {value.includes("0") ? (
