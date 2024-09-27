@@ -1,6 +1,7 @@
 import { useRouter } from "next/navigation";
 import React from "react";
-import { BellIcon, Header } from "./Settings.Page";
+import {  Header } from "./Settings.Page";
+import { BellIcon } from "./svgIcons";
 import { notificationData, notificationDataType } from "@/lib/dummydata";
 import { cn } from "@/lib/utils";
 
