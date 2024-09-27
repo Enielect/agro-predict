@@ -67,7 +67,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -81,5 +81,15 @@ input[type=number] {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.spinner_z9k8 {
+  transform-origin: center;
+  animation: spinner_StKS 0.75s infinite linear;
+}
+@keyframes spinner_StKS {
+  100% {
+    transform: rotate(360deg);
   }
 }
