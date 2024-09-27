@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn("min-h-[100dvh]  font-sans antialiased", inter.variable)}
+        className={cn(" font-sans antialiased", inter.variable)}
       >
         <div>{children}</div>
       </body>

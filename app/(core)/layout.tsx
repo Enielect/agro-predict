@@ -30,7 +30,7 @@ export default function CoreLayout({
       </div>
       <div className="sm:left-[60px] sm:max-w-[calc(100dvw-60px)] sm:relative">
         <TopNav />
-        <div className="absolute top-[86px] w-full sm:w-[calc(100dvw-60px)] min-h-[100dvh]">
+        <div className="absolute top-[69px] w-full sm:w-[calc(100dvw-71px)] min-h-[100dvh]">
           <div className="overflow-y-auto pb-[68px]  sm:pb-0 h-full">
             {children}
           </div>

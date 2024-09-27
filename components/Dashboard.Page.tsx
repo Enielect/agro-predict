@@ -4,7 +4,7 @@ import DisplayPieChart from "./DisplayPieChart";
 
 const Dashboard = () => {
   return (
-    <section className="w-full sm:bg-[#A2FFA2]/10 px-5 text-sm sm:text-base">
+    <section className="w-full  sm:bg-[#A2FFA2]/10 px-5 text-sm sm:text-base">
       <div className="sm:flex sm:items-start justify-between">
         <div>
           <h2 className="sm:text-3xl py-3 text-xl">Dashboard</h2>
