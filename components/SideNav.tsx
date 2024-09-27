@@ -17,85 +17,87 @@ export default function SideNav({ isOpen }: { isOpen: boolean }) {
   const path = usePathname();
   return (
     <div
-      className={`sm:flex hidden sm:ml-3 sm:justify-between transition-all ${
-        isOpen ? "sm:items-start " : ""
-      }  flex-col py-[2.5rem] h-[calc(100dvh-72px)]`}
+      className={`sm:flex hidden sm:ml-3 sm:justify-between transition-all duration-500 ease-linear flex-col py-[2.5rem] h-[calc(100dvh-72px)]`}
     >
       <nav className="space-y-10">
-        <div className="flex gap-8 items-center">
-          <div
-            className={`hover:bg-[#A2FFA2]/40 p-2 rounded-md ${
-              path === "/dashboard" && "bg-[#A2FFA2]/40"
-            }`}
+        <div>
+          <Link
+            className={`flex gap-8 h-[34px] mr-4 hover:bg-[#A2FFA2]/40 items-center ${
+              isOpen && path === "/dashboard" && "bg-[#A2FFA2]/40"
+            } rounded-md`}
+            href="/dashboard"
           >
-            <Link href="/dashboard">
+            <div
+              className={`hover:bg-[#A2FFA2]/40 p-2 rounded-md ${
+                path === "/dashboard" && !isOpen && "bg-[#A2FFA2]/40"
+              }`}
+            >
               <DashboardIcon name="dashboard" />
-            </Link>
-          </div>
-          <span
-            className={`hidden transition-all ${
-              isOpen ? "sm:block opacity-1" : "opacity-0"
-            }`}
-          >
-            Dashboard
-          </span>
+            </div>
+            <span className={` transition-all ${isOpen ? " block" : "hidden"}`}>
+              Dashboard
+            </span>
+          </Link>
         </div>
-        <div className="flex gap-8 items-center">
-          <div
-            className={`hover:bg-[#A2FFA2]/40 p-2 rounded-md ${
-              path === "/predict" && "bg-[#A2FFA2]/40"
-            }`}
+        <div>
+          <Link
+            className={`flex gap-8 h-[34px] mr-4 hover:bg-[#A2FFA2]/40 items-center ${
+              isOpen && path === "/predict" && "bg-[#A2FFA2]/40"
+            } rounded-md`}
+            href="/predict"
           >
-            <Link href="/predict">
+            <div
+              className={`hover:bg-[#A2FFA2]/40 p-2 rounded-md ${
+                path === "/predict" && !isOpen && "bg-[#A2FFA2]/40"
+              }`}
+            >
               <PredictIcon name="predict" />
-            </Link>
-          </div>
-          <span
-            className={`hidden transition-all ${
-              isOpen ? "sm:block opacity-1" : "opacity-0"
-            }`}
-          >
-            Predict
-          </span>
+            </div>
+            <span className={` transition-all ${isOpen ? " block" : "hidden"}`}>
+              Predict
+            </span>
+          </Link>
         </div>
-        <div className="flex gap-8 items-center">
-          <div
-            className={`hover:bg-[#A2FFA2]/40 p-2 rounded-md ${
-              path === "/quickscan" && "bg-[#A2FFA2]/40"
-            }`}
+        <div>
+          <Link
+            className={`flex gap-8 h-[34px] mr-4 hover:bg-[#A2FFA2]/40 items-center ${
+              isOpen && path === "/quickscan" && "bg-[#A2FFA2]/40"
+            } rounded-md`}
+            href="/quickscan"
           >
-            <Link href="/quickscan">
+            <div
+              className={`hover:bg-[#A2FFA2]/40 p-2 rounded-md ${
+                path === "/quickscan" && !isOpen && "bg-[#A2FFA2]/40"
+              }`}
+            >
               <QuickScanIcon name="quickscan" />
-            </Link>
-          </div>
-          <span
-            className={`hidden transition-all ${
-              isOpen ? "sm:block opacity-1" : "opacity-0"
-            }`}
-          >
-            Quick Scan
-          </span>
+            </div>
+            <span className={` transition-all ${isOpen ? "block" : "hidden"}`}>
+              Quick Scan
+            </span>
+          </Link>
         </div>
-        <div className="flex gap-8 items-center">
-          <div
-            className={`hover:bg-[#A2FFA2]/40 p-2 rounded-md ${
-              path === "/experai" && "bg-[#A2FFA2]/40"
-            }`}
+        <div>
+          <Link
+            className={`flex gap-8 h-[34px] mr-4 hover:bg-[#A2FFA2]/40 items-center ${
+              isOpen && path === "/expertai" && "bg-[#A2FFA2]/40"
+            } rounded-md`}
+            href="/expertai"
           >
-            <Link href="/expertai">
+            <div
+              className={`hover:bg-[#A2FFA2]/40 p-2 rounded-md ${
+                path === "/expertai" && !isOpen && "bg-[#A2FFA2]/40"
+              }`}
+            >
               <ExpertAIcon name="expertai" />
-            </Link>
-          </div>
-          <span
-            className={`hidden transition-all ${
-              isOpen ? "sm:block opacity-1" : "opacity-0"
-            }`}
-          >
-            Expert AI
-          </span>
+            </div>
+            <span className={` transition-all ${isOpen ? "block" : "hidden"}`}>
+              Expert AI
+            </span>
+          </Link>
         </div>
       </nav>
-      <ul>
+      <ul className="ml-3">
         <li>
           <SsettingsIcon />
         </li>
