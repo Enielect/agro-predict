@@ -51,3 +51,7 @@
 
 //   return <Chat id={chat.id} initialMessages={chat.messages} />
 // }
+
+export default function EpertAiChatPage() {
+  return <div>nothing here</div>;
+}
