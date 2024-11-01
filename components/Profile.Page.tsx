@@ -1,7 +1,8 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
-import { Header, ProfileIcon } from "./Settings.Page";
+import { Header } from "./Settings.Page";
+import { ProfileIcon } from "./svgIcons";
 import Image from "next/image";
 import Input from "@/app/(auth)/_components/Input";
 import Button from "@/app/(auth)/_components/Button";
@@ -104,12 +105,12 @@ const Profile = () => {
         />
       </div>
       <div className="space-y-4">
-        <Button style="active" onClick={() => setIsOpen(true)}>Update your plan</Button>
+        <Button style="active" onClick={() => setIsOpen(true)}>
+          Update your plan
+        </Button>
         <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
           <div className="rounded-xl bg-white w-fit mx-[10%] px-4 py-3">
-            <header className="font-semibold py-1  ">
-              Changes Saved
-            </header>
+            <header className="font-semibold py-1  ">Changes Saved</header>
             <p className="py-4 text-[#444444] text-[14px]">
               You have successully updated your profile. It will reflect in a
               bit

@@ -4,8 +4,8 @@ import DisplayPieChart from "./DisplayPieChart";
 
 const Dashboard = () => {
   return (
-    <section className="w-full  sm:bg-[#A2FFA2]/10 px-5 text-sm sm:text-base">
-      <div className="sm:flex sm:items-start justify-between">
+    <section className="w-full  sm:bg-[#A2FFA2]/10 px-5 text-sm sm:text-lg">
+      <div className="sm:flex sm:items-center justify-between">
         <div>
           <h2 className="sm:text-3xl py-3 text-xl">Dashboard</h2>
           <span className="text-sm sm:text-base text-[#444444]/60">
@@ -41,7 +41,7 @@ const Dashboard = () => {
 function AnalyticsTable() {
   return (
     <div>
-      <ul className="flex px-2 text-xs text-[#444444] sm:text-sm space-x-2 justify-between py-1 my-4 border-t border-b border-[#cfcfcf]">
+      <ul className="flex px-2 text-xs gap-5 md:text-base text-[#444444] sm:text-sm space-x-2  py-1 my-4 border-t border-b border-[#cfcfcf]">
         <li>
           <Dot color="#A2FFA2" /> Model&apos;s data
         </li>
@@ -111,7 +111,7 @@ function Dot({ color }: { color: string }) {
 
 export function AnalyticsSummary() {
   return (
-    <div className="border border-[#444444]/20 rounded-lg py-4 px-2">
+    <div className="border  border-[#444444]/20 rounded-lg py-4 px-2">
       <div className="flex justify-between  items-start">
         <div className="flex flex-col space-y-3">
           <span>Last Prediction Analytics</span>
